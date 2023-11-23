@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->text('address');
+            $table->foreignId('department_id')->references('id')->on('departments')->onDelete('cascade');
             $table->timestamps();
         });
     }

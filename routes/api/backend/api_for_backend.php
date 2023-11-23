@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Api\Backend\AuthController;
+use App\Http\Controllers\Api\Backend\EmployeeController;
 use App\Http\Controllers\Api\Backend\LoginController;
 use App\Http\Controllers\Api\Backend\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,6 @@ Route::middleware(['cors', 'json.response'])->prefix('backend')->group(function 
         
 
         // for crud by admin or any role admin using backend interface
-        // Route::apiResource('categories', CategoryController::class);
-        // Route::apiResource('products', ProductController::class);
+        Route::apiResource('employees', EmployeeController::class);
     });
 });

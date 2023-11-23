@@ -23,10 +23,19 @@ class Employee extends Model
 
     public function achievements()
     {
-        return $this->belongsToMany(Achievement::class, 'achievement_employee')
+        return $this->belongsToMany(Achievement::class, 'achievement_employees')
             ->withPivot('achievement_date')
             ->withTimestamps();
     }
+
+
+    // Schema::create('achievement_employees', function (Blueprint $table) {
+    //     $table->id();
+    //     $table->foreignId('achievement_id')->references('id')->on('achievements')->onDelete('cascade');
+    //     $table->foreignId('employee_id')->references('id')->on('employees')->onDelete('cascade');
+    //     $table->date('achievement_date');
+    //     $table->timestamps();
+    // });
 
 
 
