@@ -6,8 +6,7 @@ use App\Http\Controllers\Api\Backend\LoginController;
 use App\Http\Controllers\Api\Backend\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-
-//Route::middleware(['auth:sanctum'])->prefix('backend')->group(function () {
+// here id use two middleware ['cors', 'json.response'] for error showing and Access-Control-Allow-Origin
 Route::middleware(['cors', 'json.response'])->prefix('backend')->group(function () {
 
 
@@ -18,8 +17,10 @@ Route::middleware(['cors', 'json.response'])->prefix('backend')->group(function 
     Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
     Route::middleware('auth:sanctum')->group(function () {
+
         // use this route for logout user
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+        
 
         // for crud by admin or any role admin using backend interface
         // Route::apiResource('categories', CategoryController::class);

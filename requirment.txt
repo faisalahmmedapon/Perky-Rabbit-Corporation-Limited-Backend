@@ -1,0 +1,16 @@
+Backend (Laravel)
+1. Create a new Laravel project using the latest version.
+2. Implement user authentication with the required fields (email and password).
+3. Create a migration for an "employees" table with the following fields (id, name, email, phone,
+address)
+4. Create a migration for a "departments" table with the following fields (id, name)
+Establish a one-to-many relationship between departments and employees.
+5. Create a migration for an "achievements" table with the fields (id, name)
+Establish a many-to-many relationship between employees and achievements.
+6. Create a migration for the pivot table "achievement_employee" with fields (id, achievement_id,
+employee_id, achievement_date).
+Implement controllers to:
+• List all employees with their department and achievements.
+• Create a new employee with department and achievements assignment.
+• Update an employee's information, department and achievements.
+• Delete an employee.
