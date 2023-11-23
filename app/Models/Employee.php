@@ -14,6 +14,7 @@ class Employee extends Model
         'email',
         'phone',
         'address',
+        'department_id',
     ];
 
     public function department()
@@ -28,14 +29,6 @@ class Employee extends Model
             ->withTimestamps();
     }
 
-
-    // Schema::create('achievement_employees', function (Blueprint $table) {
-    //     $table->id();
-    //     $table->foreignId('achievement_id')->references('id')->on('achievements')->onDelete('cascade');
-    //     $table->foreignId('employee_id')->references('id')->on('employees')->onDelete('cascade');
-    //     $table->date('achievement_date');
-    //     $table->timestamps();
-    // });
 
 
 

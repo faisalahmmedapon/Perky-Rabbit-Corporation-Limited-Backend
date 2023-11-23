@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('achievement_employees', function (Blueprint $table) {
             $table->id();
             $table->foreignId('achievement_id')->references('id')->on('achievements')->onDelete('cascade');
+            $table->date('achievement_date')->default(now());
             $table->foreignId('employee_id')->references('id')->on('employees')->onDelete('cascade');
-            $table->date('achievement_date');
+
             $table->timestamps();
         });
     }
