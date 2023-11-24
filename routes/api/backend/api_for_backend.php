@@ -25,5 +25,8 @@ Route::middleware(['cors', 'json.response'])->prefix('backend')->group(function 
 
         // for crud by admin or any role admin using backend interface
         Route::apiResource('employees', EmployeeController::class);
+        Route::get('/departments', [EmployeeController::class, 'departments'])->name('departments');
+        Route::get('/achievements', [EmployeeController::class, 'achievements'])->name('achievements');
+
     });
 });
